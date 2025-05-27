@@ -16,5 +16,3 @@ If you find this work useful, please consider citing:
 ```bibtex
 {citation here}
 ```
-
-I WILL UPDATE THIS WHEN WE PUSH TO ARXIV
