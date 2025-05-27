@@ -1,0 +1,14 @@
+*.sh 
+wandb/
+/__pycache__/
+artifacts/
+*.pyc
+.vscode/
+*.json
+test_evaluation.ipynb
+logs_*
+*.pt
+*.err
+*.out
+log/
+outputs/

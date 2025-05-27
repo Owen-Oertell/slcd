@@ -1,0 +1,60 @@
+seed: 43
+wandb: true  # Whether to use Weights & Biases logging
+name: testing_svdd_sampler
+override_name: false
+
+exit_after_first_epoch: false
+
+rank: 0
+world_size: 1
+
+# Model configuration
+model:
+  n_tasks: 1  # Number of output tasks/targets
+  bucketing: true  # Whether to use distributional prediction
+  collapse_to_mean: false # Whether to collapse the output to a single mean (must use distributional prediction)
+
+# Training configuration
+train:
+  # Basic training parameters
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  betas: [0.9, 0.95]
+
+  num_epochs: 70
+  lr_decay: false
+
+  inference_batch_size: 20  
+  classifier_batch_size: 15 #
+
+  num_classifier_epochs: 1
+
+  # Task configuration
+  task: "rna"  # either "rna", "dna", or "rna_saluki"
+  val_batch_num: 10 # Number of validation batches to use
+  
+  method: "gradient" # either "svdd" or "gradient"
+  svdd_sample_M: 10
+
+  # Optimization settings
+  grad_accumulation_steps: 4
+  grad_norm_clip: -1
+  
+  # Logging and checkpointing
+  log_interval: 10
+  save_checkpoint: false
+  
+  # Classifier guidance parameters
+  guidance_scale: 10
+  
+  # Iteration parameters
+  train_iterations: 600 # Iterations for generating training samples # was 600
+  initial_train_iterations: 600
+  classifier_test_iterations: 20  # Iterations for generating test samples
+  eval_interval: 20
+  compute_rewards_interval: 100
+  
+  # Model-specific parameters
+  reinit_classifier: false
+  reset_dataset: false
+  cdq: false  # Continuous Diffusion Quantization flag
