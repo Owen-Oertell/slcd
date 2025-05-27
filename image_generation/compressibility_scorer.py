@@ -12,12 +12,19 @@ import contextlib
 import io
 from PIL import Image
 
+# input image, output compressibility score
 def jpeg_compressibility(images):
     if isinstance(images, torch.Tensor):
         images = (images * 255).round().clamp(0, 255).to(torch.uint8).cpu().numpy()
         images = images.transpose(0, 2, 3, 1)  # NCHW -> NHWC
-    pil_images = [Image.fromarray(image) for image in images]
-
+    pil_images = images
+    if isinstance(images, np.ndarray):
+        pil_images = [Image.fromarray(image) for image in images]
+        
+    # buffers = [io.BytesIO() for _ in images]
+    # for image, buffer in zip(images, buffers):
+    #     image.save(buffer, format="JPEG", quality=95)
+    # sizes = [buffer.tell() / 1000 for buffer in buffers]
     sizes = []
     with contextlib.ExitStack() as stack:
         buffers = [stack.enter_context(io.BytesIO()) for _ in pil_images]
