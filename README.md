@@ -1,6 +1,6 @@
 # Code for *Efficient Controllable Diffusion via Optimal Classifier Guidance*
 
-This code accompanies our paper [Efficient Controllable Diffusion via Optimal Classifier Guidance](https://arxiv.org/abs/2505.21666)) where the goal is to maximize the reward of generated samples from a diffusion model. Our method Supervised Learning based Controlled Diffusion (SLCD) is a simple yet effective method that can be used to control the generation of diffusion models. We further demonstrate superior performance on image and molecule sequence generation tasks.
+This code accompanies our paper [Efficient Controllable Diffusion via Optimal Classifier Guidance](https://arxiv.org/abs/2505.21666) where the goal is to maximize the reward of generated samples from a diffusion model. Our method Supervised Learning based Controlled Diffusion (SLCD) is a simple yet effective method that can be used to control the generation of diffusion models. We further demonstrate superior performance on image and molecule sequence generation tasks.
 
 ![image](./assets/results.png)
 
