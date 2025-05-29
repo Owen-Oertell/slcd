@@ -14,5 +14,12 @@ There are two main experiments in the paper: image generation tasks and molecule
 If you find this work useful, please consider citing:
 
 ```bibtex
-{citation here}
-```
+@misc{oertell2025efficient,
+      title={Efficient Controllable Diffusion via Optimal Classifier Guidance}, 
+      author={Owen Oertell and Shikun Sun and Yiding Chen and Jin Peng Zhou and Zhiyong Wang and Wen Sun},
+      year={2025},
+      eprint={2505.21666},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.21666}, 
+}```
